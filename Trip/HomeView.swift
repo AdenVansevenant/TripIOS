@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
-var name : String = "Aden"
 
 struct HomeView: View {
 
     var body: some View {
-
+        ScrollView {
+            Image("Barcelona")
+            Text("Barcelona").foregroundStyle(.tint)
+            Text("tekst straks")
+        }
     }
 }
 
 #Preview {
-   
+   HomeView()
 }

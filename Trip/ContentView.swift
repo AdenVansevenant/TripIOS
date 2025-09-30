@@ -14,7 +14,7 @@ struct ContentView: View {
                 HomeView()
             }
             Tab("departure", systemImage: "airplane.departure") {
-                HomeView()
+                DepartureView()
             }
             Tab("arrival", systemImage: "airplane.arrival") {
                 HomeView()

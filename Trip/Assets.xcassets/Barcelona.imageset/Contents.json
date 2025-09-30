@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "logan-armstrong-hVhfqhDYciU-unsplash-1-1600x700.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "logan-armstrong-hVhfqhDYciU-unsplash-1-1600x700 1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logan-armstrong-hVhfqhDYciU-unsplash-1-1600x700 2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
