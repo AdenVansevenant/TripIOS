@@ -7,23 +7,39 @@
 
 import SwiftUI
 
+struct info {
+    let afkortingDep : String
+    let afkortingArr : String
+    let airportDep : String
+    let airportArr : String
+    let depTime : String
+    let ArrTime : String
+    let Flight : String
+    let Gate : String
+    let Seat : String
+    let Date : String
+}
+
+var information : info{
+    info(afkortingDep: "Bru", afkortingArr: "BCN", airportDep: "Brussels", airportArr: "Barcelona", depTime: "8:15", ArrTime: "11:15", Flight: "SN23AA", Gate: "B23", Seat: "27A", Date: "2024-08-27")
+}
 struct DepartureView: View {
     var body: some View {
         Grid{
             GridRow{
-                Text("BRU").font(.largeTitle).foregroundColor(Color.green)
+                Text(information.afkortingArr).font(.largeTitle).foregroundColor(Color.green)
                 Text("")
-                Text("BCN").font(.largeTitle).foregroundColor(Color.green)
+                Text(information.afkortingArr).font(.largeTitle).foregroundColor(Color.green)
             }
             GridRow{
-                Text("Brussels")
+                Text(information.airportDep)
                 Image(systemName: "airplane")
-                Text("Barcelona")
+                Text(information.airportArr)
             }
             GridRow{
-                Text("8:15")
+                Text(information.depTime)
                 Text("")
-                Text("11:15")
+                Text(information.ArrTime)
             }
         }
             .padding()
@@ -36,9 +52,9 @@ struct DepartureView: View {
                 
             }
             GridRow{
-                Text("SN23A")
-                Text("B23")
-                Text("27A")
+                Text(information.Flight)
+                Text(information.Gate)
+                Text(information.Seat)
             }
         }
         .padding()
@@ -55,7 +71,7 @@ struct DepartureView: View {
                 }
             }
             VStack{
-                Image(systemName: "airplane")
+                Image(systemName: "person.crop.artframe")
             }
         }
     }
