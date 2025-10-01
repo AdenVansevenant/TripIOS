@@ -7,70 +7,58 @@
 
 import SwiftUI
 
-struct info {
-    let afkortingDep : String
-    let afkortingArr : String
-    let airportDep : String
-    let airportArr : String
-    let depTime : String
-    let ArrTime : String
-    let Flight : String
-    let Gate : String
-    let Seat : String
-    let Date : String
-}
-
-var information : info{
-    info(afkortingDep: "Bru", afkortingArr: "BCN", airportDep: "Brussels", airportArr: "Barcelona", depTime: "8:15", ArrTime: "11:15", Flight: "SN23AA", Gate: "B23", Seat: "27A", Date: "2024-08-27")
-}
 struct DepartureView: View {
+    let flight: FlightInfo
+    
     var body: some View {
-        Grid{
-            GridRow{
-                Text(information.afkortingArr).font(.largeTitle).foregroundColor(Color.green)
-                Text("")
-                Text(information.afkortingArr).font(.largeTitle).foregroundColor(Color.green)
-            }
-            GridRow{
-                Text(information.airportDep)
-                Image(systemName: "airplane")
-                Text(information.airportArr)
-            }
-            GridRow{
-                Text(information.depTime)
-                Text("")
-                Text(information.ArrTime)
-            }
-        }
-            .padding()
         
-        Grid{
-            GridRow{
-                Text("Flight")
-                Text("Gate")
-                Text("Seat")
-                
+        VStack {
+            HStack {
+                VStack {
+                    Text(flight.afkortingDep)
+                        .font(.largeTitle)
+                        .foregroundColor(.green)
+                    Text(flight.airportDep).font(.largeTitle)
+                    Text(flight.depTime)
+                }
+                VStack {
+                    Image(systemName: "airplane").font(.largeTitle)
+                }
+                VStack {
+                    Text(flight.afkortingArr)
+                        .font(.largeTitle)
+                        .foregroundColor(.green)
+                    Text(flight.airportArr).font(.largeTitle)
+                    Text(flight.arrTime)
+                }
             }
-            GridRow{
-                Text(information.Flight)
-                Text(information.Gate)
-                Text(information.Seat)
-            }
-        }
-        .padding()
-        HStack{
+            .padding()
             
-            HStack{
-                VStack{
-                    Text("passenger")
+            Grid {
+                GridRow {
+                    Text("Flight")
+                    Text("Gate")
+                    Text("Seat")
+                }
+                GridRow {
+                    Text(flight.flight)
+                    Text(flight.gate)
+                    Text(flight.seat)
+                }
+            }
+            .background(.tint)
+            .padding()
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Passenger")
                     Text("Dirk Hostens")
                     Text("Class")
                     Text("Business")
                     Text("Flight Date")
-                    Text("27/08/2024")
+                    Text(flight.date)
                 }
-            }
-            VStack{
+                Spacer()
                 Image(systemName: "person.crop.artframe")
             }
         }
@@ -78,5 +66,5 @@ struct DepartureView: View {
 }
 
 #Preview {
-    DepartureView()
+    DepartureView(flight: departure)
 }

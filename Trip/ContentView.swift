@@ -14,10 +14,10 @@ struct ContentView: View {
                 HomeView()
             }
             Tab("departure", systemImage: "airplane.departure") {
-                DepartureView()
+                DepartureView(flight: departure)
             }
             Tab("arrival", systemImage: "airplane.arrival") {
-                HomeView()
+                DepartureView(flight: arrival)
             }
         
         }
