@@ -34,32 +34,34 @@ struct DepartureView: View {
             }
             .padding()
             
-            Grid {
+            Grid (horizontalSpacing: 70){
                 GridRow {
-                    Text("Flight")
-                    Text("Gate")
-                    Text("Seat")
+                    Text("Flight").font(.caption).opacity(0.8)
+                    Text("Gate").font(.caption).opacity(0.8)
+                    Text("Seat").font(.caption).opacity(0.8)
                 }
                 GridRow {
-                    Text(flight.flight)
-                    Text(flight.gate)
-                    Text(flight.seat)
+                    Text(flight.flight).font(.headline)
+                    Text(flight.gate).font(.headline)
+                    Text(flight.seat).font(.headline)
                 }
             }
-            .background(.tint)
             .padding()
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(12)
+            .padding(.bottom,40)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Passenger")
+                    Text("Passenger").foregroundColor(.gray)
                     Text("Dirk Hostens")
-                    Text("Class")
+                    Text("Class").foregroundColor(.gray)
                     Text("Business")
-                    Text("Flight Date")
+                    Text("Flight Date").foregroundColor(.gray)
                     Text(flight.date)
                 }
-                Spacer()
-                Image(systemName: "person.crop.artframe")
+                Image(systemName: "person.crop.artframe").resizable().scaledToFit().frame(width: 200, height: 160)
             }
         }
     }
